@@ -4,6 +4,8 @@ class StackArray():
     """
     Implementation of stack using an array
 
+    LIFO -> last in, first out
+
     Attributes:
         stack (list): stores the stack
     """
@@ -37,7 +39,7 @@ class Node():
 
 class StackLinkedList():
     """
-    Implementation of stack using linked list 
+    Implementation of stack using linked list with dummy header
 
     Attributes:
         head (Node): dummy header

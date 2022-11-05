@@ -16,12 +16,14 @@ class Node():
 
 class DoublyLinkedList():
     """
-    Doubly linked list implementation without dummy nodes and with tail
+    Doubly linked list implementation with dummy nodes and tail
     
     """
     def __init__(self) -> None:
-        self.head = None
-        self.tail = None
+        self.head: Node = Node(None)
+        self.tail: Node = Node(None, prev=self.head)
+        self.head.next = self.tail
+
         self.size: int = 0
 
     def insert_start(self, data: Any):
@@ -31,14 +33,12 @@ class DoublyLinkedList():
         Args:
             data (Any): data value
         """
-        newNode = Node(data, self.head)
-        self.head = newNode
-        # if empty list, assign tail
-        if not self.head:    
-            self.tail = newNode
-            return
-        
-        self.head.prev = newNode
+        # assign pointers
+        newNode = Node(data, self.head.next, self.head)
+        newNode.next.prev = newNode
+        self.head.next = newNode
+
+        # increase size
         self.size += 1
     
     def insert_end(self, data: Any):
@@ -48,16 +48,13 @@ class DoublyLinkedList():
         Args:
         data (Any): data value
         """
-        newNode = Node(data, prev=self.tail)
-        self.tail = newNode
-        # if empty list, assign head
-        if not self.tail:
-            self.head = newNode
-            return
+        # assign pointers
+        newNode = Node(data, self.tail, self.tail.prev)
+        newNode.prev.next = newNode
+        self.tail.prev = newNode
 
-        self.tail.next = newNode
+        # increase size
         self.size += 1
-    
     
     def return_list(self) -> list:
         """
@@ -66,10 +63,11 @@ class DoublyLinkedList():
         Returns:
             list: returns list
         """
-        currentNode = self.head
+        currentNode = self.head.next
         ll_arr = []
 
-        while currentNode:
+        # traverse through list
+        while currentNode and currentNode != self.tail:
             ll_arr.append(currentNode.data)
             currentNode = currentNode.next
         
@@ -82,12 +80,19 @@ class DoublyLinkedList():
         Args:
             data (Any): data value
         """
-        if not self.head: return
+        currentNode = self.head
+
+        # traverse through list until end
+        while currentNode.next != self.tail:
+            # if next node matches data
+            if currentNode.next.data == data:
+                # assign pointers
+                currentNode.next = currentNode.next.next
+                currentNode.next.prev = currentNode
+                return            
+            
+            # traverse through list
+            currentNode = currentNode.next
         
-
-
-
-ll = DoublyLinkedList()
-ll.insert_start(50)
-print(ll.return_list())
-
+        # element does not exist in the linked list
+        print("Element does not exist.")
