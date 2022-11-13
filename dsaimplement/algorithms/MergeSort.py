@@ -1,4 +1,14 @@
-def merge(arr, l, m, r, order):
+def merge(arr: list[int, float], l: int, m: int, r: int, order: str):
+    """
+    Merges two sublists together into sorted list
+
+    Args:
+        arr (list): list of values
+        l (int): left index
+        m (int): middle index
+        r (int): right index
+        order (str): order of values
+    """
     # determine length of sublists
     n1 = m - l + 1
     n2 = r - m
@@ -43,14 +53,30 @@ def merge(arr, l, m, r, order):
         j += 1
         k += 1
 
-# allows user to select increasing or decreasing order, adjusts conditional statement
-def compare(order, L, R, i, j):
+def compare(order, L, R, i, j) -> bool:
+    """
+    Allows user to select increasing or decreasing order, adjusts conditional statement
+    
+    Returns:
+        bool: True/False
+    """
     if order == "increasing":
         return L[i] <= R[j]
     else:
         return L[i] >= R[j]
 
-def mergeSort(arr, l, r, order: str = "increasing"):
+def mergeSort(arr: list[int, float], l: int, r: int, order: str = "increasing"):
+    """
+    Merge sort implementation
+
+    O(nlogn) run time, O(n) space complexity
+
+    Args:
+        arr (list): array of values
+        l (int): left index
+        r (int): right index
+        order (str, optional): Set desired order. Defaults to "increasing".
+    """
     if l < r:
         # calculate new middle
         m = (l+r-1)//2
