@@ -1,0 +1,4 @@
+name: dsa_env
+channels:
+  - defaults
+prefix: /Users/yash/opt/anaconda3/envs/dsa_env
