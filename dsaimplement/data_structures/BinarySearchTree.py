@@ -1,4 +1,5 @@
 from typing import Any, Union
+import collections
 
 class Node():
     def __init__(self, data: Any, left = None, right = None) -> None:
@@ -227,3 +228,25 @@ class BinarySearchTree():
             self.__in_order_traversal(node.left)
             print(f"{node.data} ")
             self.__in_order_traversal(node.right)
+        
+    def level_order_traversal(self):
+        """
+        Breadth first search using queue. O(n) runtime and O(n) memory
+
+        Raises:
+            Exception: if tree does not exist
+        """
+        if not self.root:
+            raise Exception("Tree does not exist.")
+        
+        q = collections.deque()
+        q.append(self.root)
+
+        while q:
+            node = q.popleft()
+            print(f"{node.data} ")
+
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
