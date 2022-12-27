@@ -9,7 +9,7 @@ Data structures:
 - Doubly linked list
 - Stack
 - Queue
-- Graph and heap being implemented soon
+- Graph being implemented soon
 
 Sorting:
 - Bubble sort
