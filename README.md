@@ -9,6 +9,7 @@ Data structures:
 - Doubly linked list
 - Stack
 - Queue
+- Max/Min Heap
 - Graph being implemented soon
 
 Sorting:
