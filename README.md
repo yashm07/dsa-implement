@@ -1,5 +1,5 @@
 # dsa-implement
-Implementation of common data structures and algorithms using Python. 
+Python package for implementation of common data structures and algorithms. 
 
 ## Data structures and algorithms
 
