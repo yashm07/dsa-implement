@@ -1,5 +1,5 @@
 # dsa-implement
-Implementation of common data structures and algorithms using Python. 
+Python package for implementation of common data structures and algorithms. 
 
 ## Data structures and algorithms
 
@@ -9,7 +9,8 @@ Data structures:
 - Doubly linked list
 - Stack
 - Queue
-- Graph and heap being implemented soon
+- Max/Min Heap
+- Graph being implemented soon
 
 Sorting:
 - Bubble sort
