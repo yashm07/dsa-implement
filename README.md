@@ -10,7 +10,7 @@ Data structures:
 - Stack
 - Queue
 - Max/Min Heap
-- Graph being implemented soon
+- Graph
 
 Sorting:
 - Bubble sort
