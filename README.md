@@ -11,6 +11,7 @@ Data structures:
 - Queue
 - Max/Min Heap
 - Graph
+- Trie
 
 Sorting:
 - Bubble sort
