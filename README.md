@@ -13,7 +13,9 @@ Data structures:
 - Graph
 - Trie
 
-Sorting:
+Algorithms:
+- Binary search
+- Ternary search
 - Bubble sort
 - Count sort
 - Insertion Sort
